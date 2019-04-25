@@ -1,0 +1,265 @@
+/etc
+|-- abrt
+|   `-- plugins
+|-- alternatives
+|   |-- jre -> /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.211-2.6.17.1.el7_6.x86_64/jre
+|   |-- jre_1.7.0 -> /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.211-2.6.17.1.el7_6.x86_64/jre
+|   |-- jre_1.7.0_exports -> /usr/lib/jvm-exports/java-1.7.0-openjdk-1.7.0.211-2.6.17.1.el7_6.x86_64
+|   |-- jre_1.7.0_openjdk -> /usr/lib/jvm/jre-1.7.0-openjdk-1.7.0.211-2.6.17.1.el7_6.x86_64
+|   |-- jre_1.7.0_openjdk_exports -> /usr/lib/jvm-exports/java-1.7.0-openjdk-1.7.0.211-2.6.17.1.el7_6.x86_64
+|   |-- jre_exports -> /usr/lib/jvm-exports/java-1.7.0-openjdk-1.7.0.211-2.6.17.1.el7_6.x86_64
+|   |-- jre_openjdk -> /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.211-2.6.17.1.el7_6.x86_64/jre
+|   `-- jre_openjdk_exports -> /usr/lib/jvm-exports/java-1.7.0-openjdk-1.7.0.211-2.6.17.1.el7_6.x86_64
+|-- audisp [error opening dir]
+|-- audit [error opening dir]
+|-- bash_completion.d
+|-- binfmt.d
+|-- chkconfig.d
+|-- cifs-utils
+|-- cron.d
+|-- cron.daily
+|-- cron.hourly
+|-- cron.monthly
+|-- cron.weekly
+|-- dbus-1
+|   |-- session.d
+|   `-- system.d
+|-- default
+|-- depmod.d
+|-- dhcp [error opening dir]
+|-- dracut.conf.d
+|-- egl
+|   `-- egl_external_platform.d
+|-- exports.d
+|-- firewalld [error opening dir]
+|-- fonts
+|   `-- conf.d
+|-- gconf
+|   |-- 2
+|   |-- gconf.xml.defaults
+|   |-- gconf.xml.mandatory
+|   |-- gconf.xml.system
+|   `-- schemas
+|-- gcrypt
+|-- gdbinit.d
+|-- glvnd
+|   `-- egl_vendor.d
+|-- gnupg
+|-- groff
+|   |-- site-font
+|   `-- site-tmac
+|-- grub.d [error opening dir]
+|-- gss
+|   `-- mech.d
+|-- gssproxy
+|-- httpd
+|   |-- conf
+|   |-- conf.d
+|   |-- conf.modules.d
+|   |-- logs -> ../../var/log/httpd
+|   |-- modules -> ../../usr/lib64/httpd/modules
+|   `-- run -> /run/httpd
+|-- init.d -> rc.d/init.d
+|-- iproute2
+|-- java
+|   `-- security
+|       `-- security.d
+|-- jvm
+|-- jvm-commmon
+|-- kernel
+|   `-- postinst.d
+|-- krb5.conf.d
+|-- latrace.d
+|   `-- headers
+|       `-- sysdeps
+|           `-- x86_64
+|-- ld.so.conf.d
+|-- libnl
+|-- libreport
+|   |-- events
+|   |-- events.d
+|   |-- plugins
+|   `-- workflows.d
+|-- logrotate.d
+|-- lsm
+|   `-- pluginconf.d
+|-- lvm
+|   |-- archive [error opening dir]
+|   |-- backup [error opening dir]
+|   |-- cache [error opening dir]
+|   `-- profile
+|-- maven
+|-- modprobe.d
+|-- modules-load.d
+|-- my.cnf.d
+|-- NetworkManager
+|   |-- conf.d
+|   |-- dispatcher.d
+|   |   |-- no-wait.d
+|   |   |-- pre-down.d
+|   |   `-- pre-up.d
+|   |-- dnsmasq.d
+|   |-- dnsmasq-shared.d
+|   `-- system-connections
+|-- ntp
+|-- openldap
+|   |-- certs
+|   `-- schema
+|-- opt
+|-- pam.d
+|-- pear
+|-- php.d
+|-- pkcs11
+|   `-- modules
+|-- pki
+|   |-- CA
+|   |   |-- certs
+|   |   |-- crl
+|   |   |-- newcerts
+|   |   `-- private [error opening dir]
+|   |-- ca-trust
+|   |   |-- extracted
+|   |   |   |-- java
+|   |   |   |-- openssl
+|   |   |   `-- pem
+|   |   `-- source
+|   |       |-- anchors
+|   |       `-- blacklist
+|   |-- java
+|   |-- nssdb
+|   |-- nss-legacy
+|   |-- rpm-gpg
+|   |-- rsyslog [error opening dir]
+|   `-- tls
+|       |-- certs
+|       |-- misc
+|       `-- private
+|-- plymouth
+|-- pm
+|   |-- config.d
+|   |-- power.d
+|   `-- sleep.d
+|-- polkit-1
+|   |-- localauthority [error opening dir]
+|   |-- localauthority.conf.d
+|   `-- rules.d [error opening dir]
+|-- popt.d
+|-- postfix
+|-- ppp
+|   `-- peers
+|-- prelink.conf.d
+|-- profile.d
+|-- pulse
+|-- python
+|-- rc0.d -> rc.d/rc0.d
+|-- rc1.d -> rc.d/rc1.d
+|-- rc2.d -> rc.d/rc2.d
+|-- rc3.d -> rc.d/rc3.d
+|-- rc4.d -> rc.d/rc4.d
+|-- rc5.d -> rc.d/rc5.d
+|-- rc6.d -> rc.d/rc6.d
+|-- rc.d
+|   |-- init.d
+|   |-- rc0.d
+|   |-- rc1.d
+|   |-- rc2.d
+|   |-- rc3.d
+|   |-- rc4.d
+|   |-- rc5.d
+|   `-- rc6.d
+|-- request-key.d
+|-- rpm
+|-- rsyslog.d
+|-- rwtab.d
+|-- samba
+|-- sasl2
+|-- scl
+|   |-- conf -> prefixes
+|   `-- prefixes
+|-- security
+|   |-- console.apps
+|   |-- console.perms.d
+|   |-- limits.d
+|   `-- namespace.d
+|-- selinux
+|   |-- final [error opening dir]
+|   |-- targeted
+|   |   |-- active [error opening dir]
+|   |   |-- contexts
+|   |   |   |-- files
+|   |   |   `-- users
+|   |   |-- logins
+|   |   |-- modules
+|   |   |   `-- active
+|   |   |       `-- modules
+|   |   `-- policy
+|   `-- tmp
+|-- setuptool.d
+|-- skel
+|-- smartmontools
+|   `-- smartd_warning.d
+|-- ssh
+|-- ssl
+|   `-- certs -> ../pki/tls/certs
+|-- statetab.d
+|-- subversion
+|-- sudoers.d [error opening dir]
+|-- sysconfig
+|   |-- cbq
+|   |-- console
+|   |-- modules
+|   `-- network-scripts
+|-- sysctl.d
+|-- systemd
+|   |-- system
+|   |   |-- basic.target.wants
+|   |   |-- default.target.wants
+|   |   |-- getty.target.wants
+|   |   |-- local-fs.target.wants
+|   |   |-- multi-user.target.wants
+|   |   |-- network-online.target.wants
+|   |   |-- remote-fs.target.wants
+|   |   |-- sockets.target.wants
+|   |   |-- sysinit.target.wants
+|   |   |-- system-update.target.wants
+|   |   `-- vmtoolsd.service.requires
+|   `-- user
+|-- target
+|   `-- backup
+|-- terminfo
+|-- tmpfiles.d
+|-- tuned
+|   `-- recommend.d
+|-- udev
+|   `-- rules.d
+|-- vmware-tools
+|   |-- GuestProxyData
+|   |   |-- server
+|   |   `-- trusted [error opening dir]
+|   |-- icu -> /usr/lib/vmware-tools/icu
+|   |-- plugins -> /usr/lib/vmware-tools/plugins
+|   |-- scripts
+|   |   `-- vmware
+|   |-- state
+|   `-- vgauth
+|       `-- schemas
+|-- vsftpd
+|-- wpa_supplicant
+|-- X11
+|   |-- applnk
+|   |-- fontpath.d
+|   |   `-- xorg-x11-fonts-Type1 -> /usr/share/X11/fonts/Type1
+|   `-- xorg.conf.d
+|-- xdg
+|   |-- autostart
+|   `-- systemd
+|       `-- user -> ../../systemd/user
+|-- xinetd.d
+|-- yum
+|   |-- fssnap.d
+|   |-- pluginconf.d
+|   |-- protected.d
+|   `-- vars
+`-- yum.repos.d
+
+262 directories

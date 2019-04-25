@@ -1,0 +1,258 @@
+/etc
+|-- grub.d
+|-- fonts
+    |-- conf.d
+|-- libreport
+    |-- events
+    |-- events.d
+    |-- plugins
+    |-- workflows.d
+|-- rpm
+|-- terminfo
+|-- alternatives
+|-- chkconfig.d
+|-- rwtab.d
+|-- init.d -> rc.d/init.d
+|-- rc.d
+    |-- init.d
+    |-- rc0.d
+    |-- rc1.d
+    |-- rc2.d
+    |-- rc3.d
+    |-- rc4.d
+    |-- rc5.d
+    |-- rc6.d
+|-- rc0.d -> rc.d/rc0.d
+|-- logrotate.d
+|-- rc1.d -> rc.d/rc1.d
+|-- rc2.d -> rc.d/rc2.d
+|-- request-key.d
+|-- rc3.d -> rc.d/rc3.d
+|-- rc4.d -> rc.d/rc4.d
+|-- iproute2
+|-- rc5.d -> rc.d/rc5.d
+|-- jvm
+|-- ppp
+    |-- peers
+|-- rc6.d -> rc.d/rc6.d
+|-- prelink.conf.d
+|-- default
+|-- skel
+|-- java
+    |-- security
+        |-- security.d
+|-- lsm
+    |-- pluginconf.d
+|-- jvm-commmon
+|-- maven
+|-- ssh
+|-- openldap
+    |-- certs
+    |-- schema
+|-- favicon.png -> /usr/share/icons/hicolor/16x16/apps/fedora-logo-icon.png
+|-- gnupg
+|-- selinux
+    |-- tmp
+    |-- targeted
+        |-- active
+        |-- modules
+            |-- active
+                |-- modules
+        |-- contexts
+            |-- files
+            |-- users
+        |-- logins
+        |-- policy
+    |-- final
+|-- depmod.d
+|-- dracut.conf.d
+|-- profile.d
+|-- modprobe.d
+|-- rsyslog.d
+|-- binfmt.d
+|-- modules-load.d
+|-- X11
+    |-- applnk
+    |-- fontpath.d
+    |-- xorg.conf.d
+|-- bash_completion.d
+|-- opt
+|-- pki
+    |-- ca-trust
+        |-- extracted
+            |-- java
+            |-- openssl
+            |-- pem
+        |-- source
+            |-- anchors
+            |-- blacklist
+    |-- java
+    |-- tls
+        |-- certs
+        |-- misc
+        |-- private
+    |-- rpm-gpg
+    |-- nss-legacy
+    |-- nssdb
+    |-- CA
+        |-- certs
+        |-- crl
+        |-- newcerts
+        |-- private
+    |-- rsyslog
+|-- pm
+    |-- config.d
+    |-- power.d
+    |-- sleep.d
+|-- sysconfig
+    |-- cbq
+    |-- console
+    |-- modules
+    |-- network-scripts
+|-- xdg
+    |-- autostart
+    |-- systemd
+        |-- user -> ../../systemd/user
+|-- xinetd.d
+|-- systemd
+    |-- system
+        |-- multi-user.target.wants
+        |-- getty.target.wants
+        |-- default.target.wants
+        |-- system-update.target.wants
+        |-- sysinit.target.wants
+        |-- basic.target.wants
+        |-- local-fs.target.wants
+        |-- sockets.target.wants
+        |-- network-online.target.wants
+        |-- remote-fs.target.wants
+        |-- vmtoolsd.service.requires
+    |-- user
+|-- ld.so.conf.d
+|-- polkit-1
+    |-- rules.d
+    |-- localauthority
+    |-- localauthority.conf.d
+|-- cron.monthly
+|-- popt.d
+|-- pkcs11
+    |-- modules
+|-- ssl
+    |-- certs -> ../pki/tls/certs
+|-- yum.repos.d
+|-- yum
+    |-- vars
+    |-- pluginconf.d
+    |-- fssnap.d
+    |-- protected.d
+|-- gss
+    |-- mech.d
+|-- dbus-1
+    |-- system.d
+    |-- session.d
+|-- sysctl.d
+|-- security
+    |-- console.apps
+    |-- console.perms.d
+    |-- limits.d
+    |-- namespace.d
+|-- dhcp
+|-- cron.daily
+|-- lvm
+    |-- archive
+    |-- backup
+    |-- cache
+    |-- profile
+|-- pam.d
+|-- abrt
+    |-- plugins
+|-- tmpfiles.d
+|-- krb5.conf.d
+|-- ntp
+|-- gcrypt
+|-- sasl2
+|-- libnl
+|-- udev
+    |-- rules.d
+|-- scl
+    |-- conf -> prefixes
+    |-- prefixes
+|-- my.cnf.d
+|-- groff
+    |-- site-font
+    |-- site-tmac
+|-- pear
+|-- python
+|-- samba
+|-- gdbinit.d
+|-- cron.hourly
+|-- cron.weekly
+|-- cron.d
+|-- NetworkManager
+    |-- dispatcher.d
+        |-- no-wait.d
+        |-- pre-down.d
+        |-- pre-up.d
+    |-- conf.d
+    |-- dnsmasq-shared.d
+    |-- dnsmasq.d
+    |-- system-connections
+|-- statetab.d
+|-- target
+    |-- backup
+|-- gconf
+    |-- 2
+    |-- gconf.xml.defaults
+    |-- gconf.xml.mandatory
+    |-- gconf.xml.system
+    |-- schemas
+|-- wpa_supplicant
+|-- gssproxy
+|-- exports.d
+|-- plymouth
+|-- pulse
+|-- vmware-tools
+    |-- scripts
+        |-- vmware
+    |-- vgauth
+        |-- schemas
+    |-- GuestProxyData
+        |-- server
+        |-- trusted
+    |-- state
+    |-- plugins -> /usr/lib/vmware-tools/plugins
+    |-- icu -> /usr/lib/vmware-tools/icu
+|-- setuptool.d
+|-- tuned
+    |-- recommend.d
+|-- subversion
+|-- firewalld
+|-- cifs-utils
+    |-- idmap-plugin -> /etc/alternatives/cifs-idmap-plugin
+|-- audisp
+|-- audit
+|-- postfix
+|-- smartmontools
+    |-- smartd_warning.d
+|-- kernel
+    |-- postinst.d
+|-- sudoers.d
+|-- vsftpd
+|-- latrace.d
+    |-- headers
+        |-- sysdeps
+            |-- x86_64
+|-- php.d
+|-- httpd
+    |-- conf
+    |-- conf.d
+    |-- conf.modules.d
+    |-- logs -> ../../var/log/httpd
+    |-- modules -> ../../usr/lib64/httpd/modules
+    |-- run -> /run/httpd
+|-- glvnd
+    |-- egl_vendor.d
+|-- egl
+    |-- egl_external_platform.d
+
+255 directories
