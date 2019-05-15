@@ -1,10 +1,24 @@
 #include <iostream>
 using namespace std;
 
+class Time {
+private:
+	int hour;
+public:
+	Time() {
+		hour = 0;
+	}
+	void display(){
+		cout << hour << endl;
+	}
+	~Time() {
+		cout << "End" << endl;
+	}
+};
+
 int main()
 {
-	cout << "Hello!" << endl;
-	cout << "This is my first in Github" << endl;
-	cout << "Sure!~" << endl;
+	Time *t = new Time[10];
+	delete[] t;
 	return 0;
 }
