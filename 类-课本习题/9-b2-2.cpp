@@ -1,4 +1,4 @@
-/* 学号 姓名 班级 */
+// 1752762 计1班 魏鹳达
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -15,6 +15,7 @@ public:
 		y = _y;
 	}
 	/* 除上面允许的那个成员函数外，不再允许添加任何的数据成员和成员函数，但可以根据需要添加其它内容 */
+	friend triangle;
 };
 
 class triangle {
@@ -26,7 +27,18 @@ public:
 	/* 根据需要补充相应的语句后完成area函数(形参为空，不准改)，要求：如果三点能构成三角形，则返回面积，否则返回 -1 */
 	double area()
 	{
+		double a, b, c, p, s;
+		a = sqrt(fabs(p1.x - p2.x)*fabs(p1.x - p2.x) + fabs(p1.y - p2.y)*fabs(p1.y - p2.y));
+		b = sqrt(fabs(p1.x - p3.x)*fabs(p1.x - p3.x) + fabs(p1.y - p3.y)*fabs(p1.y - p3.y));
+		c = sqrt(fabs(p3.x - p2.x)*fabs(p3.x - p2.x) + fabs(p3.y - p2.y)*fabs(p3.y - p2.y));
 
+		if ((a + b - c > 1e-6) && (b + c - a > 1e-6) && (a + c - b > 1e-6)) {
+			p = (a + b + c) / 2;
+			s = sqrt(p*(p - a)*(p - b)*(p - c));
+			return s;
+		}
+		else
+			return -1;
 	}
 	/* 构造函数 */
 	triangle(int p1_x, int p1_y, int p2_x, int p2_y, int p3_x, int p3_y)
