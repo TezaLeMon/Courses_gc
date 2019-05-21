@@ -17,6 +17,7 @@ public:
 	const char *get_content() const;
 
 	/* 根据需要补充其它的成员函数的定义(体外实现) */
+	TString(const TString& Ts);
 	int length();
 	void set(const char *s);
 	void set(const TString& Ts);
@@ -55,35 +56,57 @@ const char *TString::get_content() const
 }
 
 /* 在此给出其它成员函数的体外实现部分 */
+TString::TString(const TString& Ts) {
+	if (Ts.content == NULL || strlen(Ts.content) == 0) {
+		content = NULL;
+		len = 0;
+	}
+	else {
+		len = strlen(Ts.content);
+		content = new(nothrow) char[len + 1];
+		if (content == NULL)
+			exit(-1);
+		strcpy(content, Ts.content);
+	}
+}
+
 int TString::length() 
 {
-	if(content)
-		return strlen(content);
-	return 0;
+	return len;
 }
 
 void TString::set(const char *s) {
 	if (content)
 		delete[] content;
 
-	if (s) {
-		content = new(nothrow) char[strlen(s) + 1];
+	if (s == NULL || strlen(s) == 0) {
+		content = NULL;
+		len = 0;
+	}
+	else {
+		len = strlen(s);
+		content = new(nothrow) char[len + 1];
+		if (content == NULL)
+			exit(-1);
 		strcpy(content, s);
 	}
-	else
-		content = NULL;
 }
 
 void TString::set(const TString& Ts) {
 	if (content)
 		delete[] content;
 
-	if (Ts.content) {
-		content = new(nothrow) char[strlen(Ts.content) + 1];
+	if (Ts.content == NULL || strlen(Ts.content) == 0) {
+		content = NULL;
+		len = 0;
+	}
+	else {
+		len = strlen(Ts.content);
+		content = new(nothrow) char[len + 1];
+		if (content == NULL)
+			exit(-1);
 		strcpy(content, Ts.content);
 	}
-	else
-		content = NULL;
 }
 
 /* main函数不准动 */
