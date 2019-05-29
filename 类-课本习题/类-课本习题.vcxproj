@@ -19,7 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="9-11.cpp" />
+    <ClCompile Include="10-b3-main.cpp" />
+    <ClCompile Include="10-b3.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="10-b3.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
