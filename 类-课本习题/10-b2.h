@@ -19,9 +19,9 @@ class Date {
 		Date(int days_total);
 		operator int();
 		//friend Date& operator+(Date& a, int& b);
-		//friend Date& operator+(int& a, Date& b);
+		friend Date& operator+(const int& a, Date& b);
 		//friend Date& operator-(Date& a, int& b);
-		//friend Date& operator-(int& a, Date& b);
+		friend Date& operator-(const int& a, Date& b);
 		Date& operator+(int b);
 		Date& operator-(int b);
 		int operator-(Date& b);

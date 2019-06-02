@@ -208,7 +208,7 @@ int memory_speed_test(int op)
 ***************************************************************************/
 int main()
 {
-	if (0) {
+	if (1) {
 		const TString s1;                 //s1为NULL
 		const TString s2("teststr2");      //s2为"teststr2"
 		const TString s3="teststr3";       //s3为"teststr3"
@@ -226,7 +226,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		const TString s0   = "teststr1";
 		const char *str1   = "teststr2";
 		const char  str2[] = "teststr3";
@@ -245,7 +245,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s1;
 
 		cout << "重载cin测试" << endl;
@@ -261,7 +261,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s1("Hello"), s2;
 
 		cout << "赋值操作测试" << endl;
@@ -288,7 +288,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s0, s1("tong"), s2("ji"), s3;
 
 		cout << "连接(+)测试(两个TString类)"<< endl;
@@ -308,7 +308,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s1("tong"), s2, s3;
 
 		cout << "连接(+)测试(TString类和字符串常量)"<< endl;
@@ -346,7 +346,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s1("tong"), s3;
 		const char *str1="ji", *str2="", *str3=NULL;
 
@@ -373,7 +373,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s1("tong"), s3;
 		char str1[]="ji", str2[]="";
 
@@ -394,7 +394,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s1("Hello"), s3;
 		char c = '!';
 
@@ -415,7 +415,7 @@ int main()
 		wait_for_enter();
 	}
 
-	if (0) {
+	if (1) {
 		const TString s1("可"), s3="清", s5="也";
 		TString s;
 		const char *str2 = "以", str4[] = "心";
@@ -433,7 +433,7 @@ int main()
 		wait_for_enter();
 	}
 
-	if (0) {
+	if (1) {
 		TString s1("tong"), s2="ji";
 		const char *str3 = "tong", str4[] = "ji";
 		const char c = '!';
@@ -467,7 +467,7 @@ int main()
 		wait_for_enter();
 	}
 
-	if (0) {
+	if (1) {
 		TString s1("可"), s3 = "清", s5 = "也";
 		TString s;
 		const char *str2 = "以", str4[] = "心";
@@ -497,7 +497,7 @@ int main()
 		wait_for_enter();
 	}
 
-	if (0) {
+	if (1) {
 		TString s1("This is a pencil"), s2("is"), s3;
 
 		cout << "删除(-)测试(TString类和TString类)" << endl;
@@ -512,7 +512,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s1("This is a pencil"), s2;
 		const char *str1 = "is";
 		const char str2[] = "is";
@@ -537,7 +537,7 @@ int main()
 		wait_for_enter();
 	}
 
-	if (0) {
+	if (1) {
 		TString s1("This is a pencil"), s2;
 		char c1 = 'i';
 
@@ -561,7 +561,7 @@ int main()
 		wait_for_enter();
 	}
 
-	if (0) {
+	if (1) {
 		TString s1;
 		const TString s2 = "is";
 		const char *str3 = "pen", str4[] = "a";
@@ -607,7 +607,7 @@ int main()
 		wait_for_enter();
 	}
 
-	if (0) {
+	if (1) {
 		TString s1("Hello"), s2;
 
 		cout << "复制(*)测试(TString类和int)" << endl;
@@ -644,7 +644,7 @@ int main()
 		wait_for_enter();
 	}
 
-	if (0) {
+	if (1) {
 		TString s1;
 
 		cout << "自复制(*=)测试(TString类和int)" << endl;
@@ -663,7 +663,7 @@ int main()
 		wait_for_enter();
 	}
 
-	if (0) {
+	if (1) {
 		TString s1;
 
 		cout << "自连接(+=)/自删除(-=)/自复制(*=)综合测试" << endl;
@@ -680,7 +680,7 @@ int main()
 		wait_for_enter();
 	}
 
-	if (0) {
+	if (1) {
 		TString s1("This is a pencil");
 
 		cout << "反转(!)测试" << endl;
@@ -697,7 +697,7 @@ int main()
 		wait_for_enter();
 	}
 
-	if (0) {
+	if (1) {
 		TString s1="house", s2="horse", s3="house", s4="", s5=NULL;
 
 		cout << "比较运算测试(两个TString类)" << endl;
@@ -733,7 +733,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s1="house";
 
 		cout << "比较运算测试(TString类和字符串常量)" << endl;
@@ -769,7 +769,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s1 = NULL, s2 = "";
 
 		/* 空的TString和NULL、"" 都认为相等（本质上，NULL是地址，""是串，没有可比性，但是此处做特殊处理） */
@@ -797,7 +797,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s1="house";
 		const char *str2="horse", *str3="house", *str4="", *str5=NULL;
 
@@ -834,7 +834,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s1="house";
 		char str2[]="horse", str3[]="house", str4[]="";
 
@@ -864,7 +864,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s1="tong", s2;
 
 		cout << "求长度测试(length()函数)" << endl;
@@ -877,7 +877,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s1="tong", s2;
 
 		cout << "求长度测试(TStringLen()函数)" << endl;
@@ -892,7 +892,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		TString s1 = "house";
 		TString s2[4] = { "yangpu", "sipingroad", "tongji", "shanghai" };
 		int i, j;

@@ -1,5 +1,4 @@
 // 1752762 计1班 魏鹳达
-// 没有考虑例如-=自己的情况...
 #include <iostream>
 using namespace std;
 
@@ -54,4 +53,4 @@ class TString {
 /* 如果有其它全局函数需要声明，写于此处 */
 int TStringLen(const TString& Ts);
 /* 如果有需要的宏定义、只读全局变量等，写于此处 */
-#define LEN_STR_PER 16		//每次申请空间的单位 调节此大小会影响空间和时间的平衡
+//#define LEN_STR_PER 16

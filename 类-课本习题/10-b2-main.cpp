@@ -79,7 +79,7 @@ long get_cur_msec(void)
 ***************************************************************************/
 int main()
 {
-	if (0) {
+	if (1) {
 		Date d1;			//2000.1.1
 		Date d2(2019,5,23);	//2019.5.23
 
@@ -93,7 +93,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		Date d1(1870,3,15);  //2000.3.15
 		Date d2(2112,3,4);   //2000.3.4
 		Date d3(2005,13,15); //2005.1.15
@@ -113,7 +113,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		Date d1(2019,2,29);   //2019.2.1
 	    Date d2(2016,2,29);   //2016.2.29
 
@@ -127,7 +127,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		Date d1, d2, d3; //都是2000.1.1
 
 		cout << "测试set，带缺省值" << endl;
@@ -145,7 +145,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		Date d1(2019,5,23);
 		Date d2(2019,5,23);
 		Date d3(2019,5,23);
@@ -166,7 +166,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		Date d1(2016,4,28);
 		Date d2(2007,5,20);
 		Date d3(2016,4,28);
@@ -191,7 +191,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		Date d1(2019,5,23);
 		int y,m,d;
 
@@ -204,7 +204,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		Date d1(2019,5,23);
 		Date d2;
 
@@ -215,7 +215,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		Date d1;
 
 		cout << "测试cin/cout" << endl;
@@ -251,7 +251,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		Date d1(1);          //1900.1.1
 		Date d2(73049);      //2099.12.31
 		Date d3(-100);       //1900.1.1
@@ -279,7 +279,7 @@ int main()
 		wait_for_enter();
 		}
 
-	if (0) {
+	if (1) {
 		Date d1(1900,1,1);
 		Date d2(2099,12,31);
 		Date d3(1982,2,19);

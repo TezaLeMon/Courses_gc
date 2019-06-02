@@ -3,7 +3,6 @@
 /* 允许添加需要的头文件、宏定义等 */
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <string.h>
 #include "10-b3.h"
 using namespace std;
 
@@ -27,9 +26,9 @@ TString::TString(const char* s)
 			content = NULL;
 			return;
 		}
-		content = new char[(len / LEN_STR_PER + 1)*LEN_STR_PER];
-		//if (content == NULL)
-		//	return;
+		content = new char[len + 1];
+		if (content = NULL)
+			exit(-1);
 		strcpy(content, s);
 	}
 	else {
@@ -42,9 +41,9 @@ TString::TString(const TString& Ts)
 {
 	if (Ts.content) {
 		len = Ts.len;
-		content = new char[(len / LEN_STR_PER + 1)*LEN_STR_PER];
-		//if (content == NULL)
-		//	return;
+		content = new char[len + 1];
+		if (content = NULL)
+			exit(-1);
 		strcpy(content, Ts.content);
 	}
 	else {
@@ -55,36 +54,18 @@ TString::TString(const TString& Ts)
 
 istream& operator>>(istream& is, TString& Ts)
 {
-	char temp[LEN_STR_PER + 1] = "\0";
-
+	char temp[128];	//默认输入长度不超过127
+	is >> temp;
+	if (is.fail()) {
+		temp[128] = '\0';
+	}
 	if (Ts.content)
 		delete[] Ts.content;
-
-	int n = 1;
-	streamsize ssize = is.width(LEN_STR_PER);
-	is >> temp;
-	
-	Ts.content = new char[LEN_STR_PER];
-	//if (Ts.content == NULL)
-	//	return is;
+	Ts.len = strlen(temp);
+	Ts.content = new char[Ts.len + 1];
+	if (Ts.content = NULL)
+		exit(-1);
 	strcpy(Ts.content, temp);
-	Ts.len = strlen(Ts.content);
-	is.width(LEN_STR_PER + 1);
-	while (is.fail() && Ts.len%LEN_STR_PER == LEN_STR_PER - 1) {	//读满缓冲区/遇到空格会置错误标记 需要继续读
-		is.clear();
-		is >> temp;
-
-		char *t = new char[(n - 1)*LEN_STR_PER];
-		strcpy(t, Ts.content);
-		delete[] Ts.content;
-		Ts.content = new char[n*LEN_STR_PER];
-		n++;
-		strcpy(Ts.content, t);
-		strcat(Ts.content, temp);
-		Ts.len = strlen(Ts.content);
-		delete[] t;
-	}
-	is.width(ssize);
 	return is;
 }
 
@@ -110,25 +91,21 @@ TString operator+(const TString& Ts1, const TString& Ts2)
 {
 	TString newString;
 
-	if ((newString.len = Ts1.len + Ts2.len) == 0) {	//两个串都为空
+	newString.len = Ts1.len + Ts2.len;
+
+	if (newString.len == 0) {	//两个串都为空
 		newString.content = NULL;
 		return newString;
 	}
-	else if (Ts1.len == 0) {
-		newString = Ts2;
-		return newString;
-	}
-	else if (Ts2.len == 0) {
-		newString = Ts1;
-		return newString;
-	}
 
-	newString.content = new char[(newString.len / LEN_STR_PER + 1)*LEN_STR_PER];
-	//if (newString.content = NULL)
-	//	exit(-1);
+	newString.content = new char[newString.len + 1]{ '\0' };
+	if (newString.content = NULL)
+		exit(-1);
 
-	strcpy(newString.content, Ts1.content);
-	strcat(newString.content, Ts2.content);
+	if (Ts1.content)
+		strcpy(newString.content, Ts1.content);
+	if (Ts2.content)
+		strcat(newString.content, Ts2.content);
 
 	return newString;
 }
@@ -139,9 +116,9 @@ TString operator+(const TString& Ts1, const char c)
 
 	newString.len = Ts1.len + 1;
 
-	newString.content = new char[(newString.len / LEN_STR_PER + 1)*LEN_STR_PER];
-	//if (newString.content = NULL)
-	//	exit(-1);
+	newString.content = new char[newString.len + 1];
+	if (newString.content = NULL)
+		exit(-1);
 
 	if (Ts1.content)
 		strcpy(newString.content, Ts1.content);
@@ -158,9 +135,9 @@ TString operator+(const char c, const TString& Ts2)
 
 	newString.len = Ts2.len + 1;
 
-	newString.content = new char[(newString.len / LEN_STR_PER + 1)*LEN_STR_PER];
-	//if (newString.content = NULL)
-	//	exit(-1);
+	newString.content = new char[newString.len + 1];
+	if (newString.content = NULL)
+		exit(-1);
 
 	newString.content[0] = c;
 	newString.content[1] = '\0';
@@ -168,37 +145,41 @@ TString operator+(const char c, const TString& Ts2)
 	if (Ts2.content)
 		strcpy(newString.content + 1, Ts2.content);
 
+
 	return newString;
 }
 
 TString& TString::operator+=(const TString& Ts)
 {
-	int l;
-	if ((l = len + Ts.len) == 0)		//两个串都为空
+	int l = len + Ts.len;
+
+	if (l == 0)		//两个串都为空
 		return *this;
-	else if (len == 0) {
-		*this = Ts;
-		return *this;
-	}
-	else if (Ts.len == 0) {
-		return *this;
-	}
 
 	char *temp = NULL;
 
-	temp = new char[(len / LEN_STR_PER + 1)*LEN_STR_PER];
-	//if (temp = NULL)
-	//	exit(-1);
-	strcpy(temp, content);
-	delete[] content;
+	if (content) {
+		temp = new char[len + 1];
+		if (temp = NULL)
+			exit(-1);
+		strcpy(temp, content);
+		delete[] content;
+	}
+	else {
+		len = l;
+		*this = Ts;
+		return *this;
+	}
 
 	len = l;
-	content = new char[(len / LEN_STR_PER + 1)*LEN_STR_PER];
-	//if (content = NULL)
-	//	exit(-1);
+
+	content = new char[len + 1];
+	if (content = NULL)
+		exit(-1);
 
 	strcpy(content, temp);
-	strcat(content, Ts.content);
+	if (Ts.content)
+		strcat(content, Ts.content);
 
 	delete[] temp;
 	return *this;
@@ -206,30 +187,33 @@ TString& TString::operator+=(const TString& Ts)
 
 TString& TString::operator+=(const char c)
 {
-	int l;
-	if ((l = len + 1) == 0)		//两个串都为空
-		return *this;
-	else if (len == 0) {
-		content = new char[LEN_STR_PER];
+	int l = len + 1;
+
+	char *temp = NULL;
+
+	if (content) {
+		temp = new char[len + 1];
+		if (temp = NULL)
+			exit(-1);
+		strcpy(temp, content);
+		delete[] content;
+	}
+	else {
+		content = new char[2]{ '\0' };
+		if (content = NULL)
+			exit(-1);
 		content[0] = c;
-		content[1] = '\0';
+		len = 1;
 		return *this;
 	}
-
-	char *temp = new char[(len / LEN_STR_PER + 1)*LEN_STR_PER];
-	//if (temp = NULL)
-	//	exit(-1);
-	strcpy(temp, content);
-	delete[] content;
-
 	len = l;
-	content = new char[(len / LEN_STR_PER + 1)*LEN_STR_PER];
-	//if (content = NULL)
-	//	exit(-1);
+
+	content = new char[len + 1]{ '\0' };
+	if (content = NULL)
+		exit(-1);
 
 	strcpy(content, temp);
 	content[len - 1] = c;
-	content[len] = '\0';
 
 	delete[] temp;
 	return *this;
@@ -241,9 +225,9 @@ TString operator-(const TString& Ts1, const TString& Ts2)
 	if (Ts1.content == NULL || Ts2.content == NULL)
 		return newString;
 
-	int l = 0, lc = Ts2.len;
+	int l = 0, lc = strlen(Ts2.content);
 	char *t;
-	if (t = strstr(newString.content, Ts2.content)){	//在内存管理上有些问题例如 长度从 LEN_STR_PER+2 减到 LEN_STR_PER-2 之后再增长时实际不用再次申请了 但自己的实现会再申请一次 有时间的浪费
+	if (t = strstr(newString.content, Ts2.content)){
 		l = t - newString.content;
 		strcpy(newString.content + l, newString.content + l + lc);
 	}
@@ -275,13 +259,15 @@ TString& TString::operator-=(const TString& Ts)
 	if (content == NULL || Ts.content == NULL)
 		return *this;
 
-	int lc = Ts.len;
+	int l = 0, lc = strlen(Ts.content);
 	char *t;
 	if (t = strstr(content, Ts.content))
 	{
-		strcpy(t, t + lc);
-		len = strlen(content);
+		l = t - content;
+		strcpy(content + l, content + l + lc);
 	}
+
+	len = strlen(content);
 
 	return *this;
 }
@@ -304,18 +290,24 @@ TString& TString::operator-=(const char c)
 	return *this;
 }
 
+
+
+
+
+
+
 TString& TString::operator=(const TString& Ts)
 {
-	if (this == &Ts)	//考虑自己=自己的情况
+	if (this == &Ts)
 		return *this;
 
 	if (Ts.content) {
 		len = Ts.len;
 		if (content)
 			delete[] content;
-		content = new char[(len / LEN_STR_PER + 1)*LEN_STR_PER];
-		//if (content = NULL)
-		//	exit(-1);
+		content = new char[len + 1];
+		if (content = NULL)
+			exit(-1);
 		strcpy(content, Ts.content);
 	}
 	else {
@@ -329,21 +321,16 @@ TString& TString::operator=(const TString& Ts)
 
 TString& TString::operator*=(const int n)
 {
-	if (n == 0) {
-		*this = "";
-		return *this;
-	}
 	if (content == NULL || n < 0)
 		return *this;
-	char *temp = new char[(len / LEN_STR_PER + 1)*LEN_STR_PER];
-	//if (temp = NULL)
-	//	exit(-1);
+	char *temp = new char[len + 1];
+	if (temp = NULL)
+		exit(-1);
 	strcpy(temp, content);
 	delete[] content;
-	content = new char[(n*len / LEN_STR_PER + 1)*LEN_STR_PER];
-	content[0] = '\0';
-	//if (content = NULL)
-	//	exit(-1);
+	content = new char[n*len + 1]{ '\0' };
+	if (content = NULL)
+		exit(-1);
 	int i;
 	for (i = 0; i < n; i++)
 		strcat(content, temp);
@@ -355,21 +342,14 @@ TString& TString::operator*=(const int n)
 TString& TString::operator*(const int n)
 {
 	static TString newTString;
-	if (n == 0) {
-		newTString = "";
-		return newTString;
-	}
-
 	newTString = *this;
 	if (content == NULL || n < 0)
 		return newTString;
 
 	delete[] newTString.content;
-
-	newTString.content = new char[(n*len / LEN_STR_PER + 1)*LEN_STR_PER];
-	newTString.content[0] = '\0';
-	//if (newTString.content = NULL)
-	//	exit(-1);
+	newTString.content = new char[n*len + 1]{ '\0' };
+	if (newTString.content = NULL)
+		exit(-1);
 	int i;
 	for (i = 0; i < n; i++)
 		strcat(newTString.content, content);
@@ -381,7 +361,8 @@ TString& TString::operator!()
 {
 	static TString newString;
 	newString = *this;
-
+	if (content == NULL)
+		return newString;
 	int i;
 	char t;
 	for (i = 0; i < len / 2; i++) {

@@ -140,14 +140,14 @@ Date::operator int()
 //	return c;
 //}
 //
-//Date& operator+(int& a, Date& b)
-//{
-//	int t = a + int(b);
-//	static Date c;
-//	c = t;
-//	return c;
-//}
-//
+Date& operator+(const int& a, Date& b)
+{
+	int t = a + int(b);
+	static Date c;
+	c = t;
+	return c;
+}
+
 //Date& operator-(Date& a, int& b)
 //{
 //	int t = int(a) + b;
@@ -156,13 +156,13 @@ Date::operator int()
 //	return c;
 //}
 //
-//Date& operator-(int& a, Date& b)
-//{
-//	int t = a + int(b);
-//	static Date c;
-//	c = t;
-//	return c;
-//}
+Date& operator-(const int& a, Date& b)
+{
+	int t = a + int(b);
+	static Date c;
+	c = t;
+	return c;
+}
 
 
 Date& Date::operator+(int b)
@@ -179,7 +179,7 @@ Date& Date::operator-(int b)
 }
 int Date::operator-(Date& b)
 {
-	return int(*this) - b;
+	return int(*this) - int(b);
 }
 
 Date Date::operator++(int)
