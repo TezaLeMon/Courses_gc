@@ -3,15 +3,16 @@
 using namespace std;
 
 class Date {
-private:
+protected:
 	int year;
 	int month;
 	int day;
 public:
 	Date();
 	Date(const int _year, const int _month, const int _day);
-	Date(const int days);
+	Date(const int days_total);
 	void set(const int _year, const int _month, const int _day);
+	void set(const int days_total);
 	operator int();
 	friend istream& operator>>(istream& is, Date& da);
 	friend ostream& operator<<(ostream& os, const Date& da);
@@ -20,7 +21,10 @@ public:
 	friend int operator-(Date& da1, Date& da2);
 	friend Date operator-(Date& da1, const int da2);
 	Date& operator++();
-	Date& operator++(int);
+	Date operator++(int);
 	Date& operator--();
-	Date& operator--(int);
+	Date operator--(int);
 };
+
+//写成了全局函数	因为在date.cpp datetime.cpp里都需要使用
+int is_leap(const int year);
