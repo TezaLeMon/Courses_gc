@@ -71,8 +71,7 @@ DateTime::operator long long() {
 istream& operator>>(istream& is, DateTime& dt) {
 	int y, mo, d, h, mi, s;
 	is >> y >> mo >> d >> h >> mi >> s;
-	dt.Date::set(y, mo, d);
-	dt.Time::set(h, mi, s);
+	dt.set(y, mo, d, h, mi, s);
 	return is;
 }
 
@@ -82,19 +81,19 @@ ostream& operator<<(ostream& os, const DateTime& dt) {
 }
 
 DateTime operator+(DateTime& dt1, const long long dt2) {
-	return long long(dt1) + dt2;
+	return (long long)(dt1) + dt2;
 }
 
 DateTime operator+(const long long dt1, DateTime& dt2) {
-	return dt1 + long long(dt2);
+	return dt1 + (long long)(dt2);
 }
 
 long long operator-(DateTime& dt1, DateTime& dt2) {
-	return long long(dt1) - long long(dt2);
+	return (long long)(dt1) - (long long)(dt2);
 }
 
 DateTime operator-(DateTime& dt1, const long long dt2) {
-	return long long(dt1) - dt2;
+	return (long long)(dt1) - dt2;
 }
 
 DateTime& DateTime::operator++() {
@@ -131,4 +130,120 @@ DateTime DateTime::operator--(int) {
 		Date::operator--();
 
 	return dt;
+}
+
+bool operator<(DateTime& a, DateTime& b)
+{
+	if (a.year > b.year)
+		return 0;
+	if (a.year < b.year)
+		return 1;
+	if (a.month > b.month)
+		return 0;
+	if (a.month < b.month)
+		return 1;
+	if (a.day > b.day)
+		return 0;
+	if (a.day < b.day)
+		return 1;
+
+	if (a.hour > b.hour)
+		return 0;
+	if (a.hour < b.hour)
+		return 1;
+	if (a.minute > b.minute)
+		return 0;
+	if (a.minute < b.minute)
+		return 1;
+
+	return a.second < b.second;
+}
+
+bool operator<=(DateTime& a, DateTime& b)
+{
+	if (a.year > b.year)
+		return 0;
+	if (a.year < b.year)
+		return 1;
+	if (a.month > b.month)
+		return 0;
+	if (a.month < b.month)
+		return 1;
+	if (a.day > b.day)
+		return 0;
+	if (a.day < b.day)
+		return 1;
+
+	if (a.hour > b.hour)
+		return 0;
+	if (a.hour < b.hour)
+		return 1;
+	if (a.minute > b.minute)
+		return 0;
+	if (a.minute < b.minute)
+		return 1;
+
+	return a.second <= b.second;
+}
+
+bool operator>(DateTime& a, DateTime& b)
+{
+	if (a.year > b.year)
+		return 1;
+	if (a.year < b.year)
+		return 0;
+	if (a.month > b.month)
+		return 1;
+	if (a.month < b.month)
+		return 0;
+	if (a.day > b.day)
+		return 1;
+	if (a.day < b.day)
+		return 0;
+
+	if (a.hour > b.hour)
+		return 1;
+	if (a.hour < b.hour)
+		return 0;
+	if (a.minute > b.minute)
+		return 1;
+	if (a.minute < b.minute)
+		return 0;
+	return a.second > b.second;
+}
+
+bool operator>=(DateTime& a, DateTime& b)
+{
+	if (a.year > b.year)
+		return 1;
+	if (a.year < b.year)
+		return 0;
+	if (a.month > b.month)
+		return 1;
+	if (a.month < b.month)
+		return 0;
+	if (a.day > b.day)
+		return 1;
+	if (a.day < b.day)
+		return 0;
+
+	if (a.hour > b.hour)
+		return 1;
+	if (a.hour < b.hour)
+		return 0;
+	if (a.minute > b.minute)
+		return 1;
+	if (a.minute < b.minute)
+		return 0;
+	return a.second >= b.second;
+}
+
+bool operator==(DateTime& a, DateTime& b)
+{
+	return a.year == b.year&&a.month == b.month&&a.day == b.day&&a.hour == b.hour&&a.minute == b.minute&&a.second == b.second;
+}
+
+bool operator!=(DateTime& a, DateTime& b)
+{
+	return !(a.year == b.year&&a.month == b.month&&a.day == b.day&&a.hour == b.hour&&a.minute == b.minute&&a.second == b.second);
 }

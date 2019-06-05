@@ -24,6 +24,12 @@ public:
 	Date operator++(int);
 	Date& operator--();
 	Date operator--(int);
+	friend bool operator>(Date& t1, Date& t2);
+	friend bool operator>=(Date& t1, Date& t2);
+	friend bool operator<(Date& t1, Date& t2);
+	friend bool operator<=(Date& t1, Date& t2);
+	friend bool operator==(Date& t1, Date& t2);
+	friend bool operator!=(Date& t1, Date& t2);
 };
 
 //写成了全局函数	因为在date.cpp datetime.cpp里都需要使用

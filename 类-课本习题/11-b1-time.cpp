@@ -158,3 +158,65 @@ Time Time::operator--(int) {
 
 	return t;
 }
+
+bool operator<(Time& a, Time& b)
+{
+	if (a.hour > b.hour)
+		return 0;
+	if (a.hour < b.hour)
+		return 1;
+	if (a.minute > b.minute)
+		return 0;
+	if (a.minute < b.minute)
+		return 1;
+	return a.second < b.second;
+}
+
+bool operator<=(Time& a, Time& b)
+{
+	if (a.hour > b.hour)
+		return 0;
+	if (a.hour < b.hour)
+		return 1;
+	if (a.minute > b.minute)
+		return 0;
+	if (a.minute < b.minute)
+		return 1;
+	return a.second <= b.second;
+}
+
+bool operator>(Time& a, Time& b)
+{
+	if (a.hour > b.hour)
+		return 1;
+	if (a.hour < b.hour)
+		return 0;
+	if (a.minute > b.minute)
+		return 1;
+	if (a.minute < b.minute)
+		return 0;
+	return a.second > b.second;
+}
+
+bool operator>=(Time& a, Time& b)
+{
+	if (a.hour > b.hour)
+		return 1;
+	if (a.hour < b.hour)
+		return 0;
+	if (a.minute > b.minute)
+		return 1;
+	if (a.minute < b.minute)
+		return 0;
+	return a.second >= b.second;
+}
+
+bool operator==(Time& a, Time& b)
+{
+	return a.hour == b.hour&&a.minute == b.minute&&a.second == b.second;
+}
+
+bool operator!=(Time& a, Time& b)
+{
+	return !(a.hour == b.hour&&a.minute == b.minute&&a.second == b.second);
+}

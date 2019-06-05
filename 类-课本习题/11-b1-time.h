@@ -24,4 +24,10 @@ public:
 	Time operator++(int);
 	Time& operator--();
 	Time operator--(int);
+	friend bool operator>(Time& t1, Time& t2);
+	friend bool operator>=(Time& t1, Time& t2);
+	friend bool operator<(Time& t1, Time& t2);
+	friend bool operator<=(Time& t1, Time& t2);
+	friend bool operator==(Time& t1, Time& t2);
+	friend bool operator!=(Time& t1, Time& t2);
 };

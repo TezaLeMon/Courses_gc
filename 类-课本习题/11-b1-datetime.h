@@ -22,4 +22,10 @@ public:
 	DateTime operator++(int);
 	DateTime& operator--();
 	DateTime operator--(int);
+	friend bool operator>(DateTime& t1, DateTime& t2);
+	friend bool operator>=(DateTime& t1, DateTime& t2);
+	friend bool operator<(DateTime& t1, DateTime& t2);
+	friend bool operator<=(DateTime& t1, DateTime& t2);
+	friend bool operator==(DateTime& t1, DateTime& t2);
+	friend bool operator!=(DateTime& t1, DateTime& t2);
 };

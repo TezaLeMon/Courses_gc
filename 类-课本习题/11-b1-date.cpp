@@ -188,9 +188,9 @@ Date Date::operator++(int) {
 			month = 1;
 			year++;
 			if (year > 2099) {
-				year = 2099;
-				month = 12;
-				day = 31;
+				year = 1900;
+				month = 1;
+				day = 1;
 				return d;
 			}
 		}
@@ -241,4 +241,66 @@ Date Date::operator--(int) {
 	}
 
 	return d;
+}
+
+bool operator<(Date& a, Date& b)
+{
+	if (a.year > b.year)
+		return 0;
+	if (a.year < b.year)
+		return 1;
+	if (a.month > b.month)
+		return 0;
+	if (a.month < b.month)
+		return 1;
+	return a.day < b.day;
+}
+
+bool operator<=(Date& a, Date& b)
+{
+	if (a.year > b.year)
+		return 0;
+	if (a.year < b.year)
+		return 1;
+	if (a.month > b.month)
+		return 0;
+	if (a.month < b.month)
+		return 1;
+	return a.day <= b.day;
+}
+
+bool operator>(Date& a, Date& b)
+{
+	if (a.year > b.year)
+		return 1;
+	if (a.year < b.year)
+		return 0;
+	if (a.month > b.month)
+		return 1;
+	if (a.month < b.month)
+		return 0;
+	return a.day > b.day;
+}
+
+bool operator>=(Date& a, Date& b)
+{
+	if (a.year > b.year)
+		return 1;
+	if (a.year < b.year)
+		return 0;
+	if (a.month > b.month)
+		return 1;
+	if (a.month < b.month)
+		return 0;
+	return a.day >= b.day;
+}
+
+bool operator==(Date& a, Date& b)
+{
+	return a.year == b.year&&a.month == b.month&&a.day == b.day;
+}
+
+bool operator!=(Date& a, Date& b)
+{
+	return !(a.year == b.year&&a.month == b.month&&a.day == b.day);
 }
