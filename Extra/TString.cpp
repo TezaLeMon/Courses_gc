@@ -7,6 +7,11 @@
 #include <iostream>
 using namespace std;
 
+
+/* 如果有需要的宏定义、只读全局变量等，写于此处 */
+#define LEN_STR_PER 1048576		//每次申请空间的单位 调节此大小会影响空间和时间的平衡
+//此处由于已知题目所占空间较多 直接设为了 1MB （1024 * 1024）
+
 /* 补全TString类的定义，所有成员函数均体外实现，不要在此处体内实现 */
 class TString {
 private:
@@ -58,9 +63,6 @@ public:
 
 /* 如果有其它全局函数需要声明，写于此处 */
 int TStringLen(const TString& Ts);
-
-/* 如果有需要的宏定义、只读全局变量等，写于此处 */
-#define LEN_STR_PER 65536		//每次申请空间的单位 调节此大小会影响空间和时间的平衡
 
 /* 给出 TString 类的所有成员函数的体外实现 */
 TString::~TString()
@@ -354,7 +356,7 @@ TString operator-(const TString& Ts1, const TString& Ts2)
 	if (t = strstr(newString.content, Ts2.content)) {
 		l = t - newString.content;
 		memcpy(t, t + lc, newString.len - l - lc + 1);
-		newString.len = strlen(newString.content);
+		newString.len -= lc;
 	}
 
 	return newString;
@@ -372,7 +374,7 @@ TString operator-(const TString& Ts1, const char c)
 	{
 		l = t - newString.content;
 		memcpy(t, t + 1, newString.len - l);
-		newString.len = strlen(newString.content);
+		newString.len -= 1;
 	}
 
 	return newString;

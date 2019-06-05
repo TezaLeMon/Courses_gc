@@ -1,4 +1,4 @@
-/* 学号 姓名 班级 */
+// 1752762 计1班 魏鹳达
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <iomanip>
