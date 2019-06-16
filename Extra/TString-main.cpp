@@ -113,9 +113,7 @@ int memory_speed_test(void)
 		temp[len] = 0;
 		total += len;
 		s1 += temp;
-
 		strcat(crc_str, temp);
-
 		MB_count = s1.length() / (1024 * 1024);
 		if (MB_count - MB_prev_count >= 1) {
 			MB_prev_count = MB_count;

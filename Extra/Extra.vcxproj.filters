@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="99-2.cpp">
+    <ClCompile Include="TString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TString-main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

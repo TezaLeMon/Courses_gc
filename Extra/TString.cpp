@@ -1,5 +1,13 @@
 // 1752762 计1班 魏鹳达
 
+
+//Liunx		Excellent 45s	My_TString 18s	快50%
+//Windows	Excellent 33.5s	My_TString 39s	慢20%
+//为什么Liunx/Windows下相比Excellent效率相差过大？
+//同时观察到每次My_TSring在长度达 n MB整时会有一段较长延迟 且随n增大延迟时间增长
+//原因为new操作随申请空间扩大 耗时增加？(改用链表形式存储？)
+
+
 /* 允许添加需要的头文件、宏定义等 */
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
@@ -276,23 +284,32 @@ TString& TString::operator+=(const TString& Ts)
 	}
 
 	if (l / LEN_STR_PER > len / LEN_STR_PER) {	//已有空间不足
-		char *temp = NULL;
+		//char *temp = NULL;
 
-		temp = new char[capacity];
-		if (temp) {
-			memcpy(temp, content, len + 1);
+		//temp = new char[capacity];
+		//if (temp) {
+		//	memcpy(temp, content, len + 1);
 
-			delete[] content;
+		//	delete[] content;
 
-			capacity = (l / LEN_STR_PER + 1)*LEN_STR_PER;
-			content = new char[capacity];
-			if (content) {
-				memcpy(content, temp, len);
-				memcpy(content + len, Ts.content, Ts.len + 1);
-			}
-			len = l;
-			delete[] temp;
+		//	capacity = (l / LEN_STR_PER + 1)*LEN_STR_PER;
+		//	content = new char[capacity];
+		//	if (content) {
+		//		memcpy(content, temp, len);
+		//		memcpy(content + len, Ts.content, Ts.len + 1);
+		//	}
+		//	len = l;
+		//	delete[] temp;
+		//}
+		char *p = content;
+		capacity = (l / LEN_STR_PER + 1)*LEN_STR_PER;
+		content = new char[capacity];
+		if (content) {
+			memcpy(content, p, len);
+			memcpy(content + len, Ts.content, Ts.len + 1);
 		}
+		len = l;
+		delete[] p;
 	}
 	else {
 		memcpy(content + len, Ts.content, Ts.len + 1);
