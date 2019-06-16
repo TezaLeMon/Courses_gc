@@ -1,7 +1,7 @@
 // 1752762 计1班 魏鹳达
 
 #include <math.h>
-#include <iostream>
+#include <iostream> 
 using namespace std;
 
 #define dx 0.1	//积分精度

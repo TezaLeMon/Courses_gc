@@ -1,7 +1,7 @@
 // 1752762 计1班 魏鹳达
 #include <iostream>
 using namespace std;
-
+ 
 /* P.10 的预定义常量和类型 */
 #define TRUE		1
 #define FALSE		0

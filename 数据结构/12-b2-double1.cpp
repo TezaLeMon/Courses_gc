@@ -1,6 +1,6 @@
 // 1752762 ¼Æ1°à ÎºðÙ´ï
 #include "12-b2-double1.h"
-#include <math.h>
+#include <math.h> 
 #include <iostream>
 using namespace std;
 

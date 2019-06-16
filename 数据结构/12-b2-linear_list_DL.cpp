@@ -1,7 +1,7 @@
 // 1752762 计1班 魏鹳达
 #include <iostream>
 #include <cstdlib>
-#include "12-b2-linear_list_DL.h"	//形式定义
+#include "12-b2-linear_list_DL.h"	//形式定义 
 
 using namespace std;
 

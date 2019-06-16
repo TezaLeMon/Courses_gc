@@ -1,6 +1,6 @@
 // 1752762 ¼Æ1°à ÎºğÙ´ï
 #include "12-b2-student.h"
-using namespace std;
+using namespace std; 
 
 student::student() {
 	num = 1850000;

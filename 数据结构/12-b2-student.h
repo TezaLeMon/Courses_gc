@@ -1,7 +1,7 @@
 // 1752762 ¼Æ1°à ÎºðÙ´ï
 #include <string>
 #include <iostream>
-using namespace std;
+using namespace std; 
 
 class student {
 private:

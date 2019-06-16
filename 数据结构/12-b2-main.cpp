@@ -1,7 +1,7 @@
 // 1752762 ¼Æ1°à ÎºðÙ´ï
 #include <iostream>
 #include <iomanip>
-#include "12-b2-linear_list_DL.cpp"
+#include "12-b2-linear_list_DL.cpp" 
 #include "12-b2-double1.h"
 #include "12-b2-student.h"
 

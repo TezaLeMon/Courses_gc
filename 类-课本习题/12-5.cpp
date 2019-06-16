@@ -1,7 +1,7 @@
 // 1752762 ¼Æ1°à ÎºðÙ´ï
 
 #include <iostream>
-#include <math.h>
+#include <math.h> 
 using namespace std;
 
 class Shape {
