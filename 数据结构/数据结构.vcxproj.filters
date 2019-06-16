@@ -14,4 +14,29 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="12-b2-double1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="12-b2-student.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="12-b2-linear_list_DL.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="12-b2-main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="12-b2-double1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="12-b2-student.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="12-b2-linear_list_DL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

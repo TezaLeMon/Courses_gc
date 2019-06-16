@@ -18,6 +18,19 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="12-b2-double1.cpp" />
+    <ClCompile Include="12-b2-linear_list_DL.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="12-b2-main.cpp" />
+    <ClCompile Include="12-b2-student.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="12-b2-double1.h" />
+    <ClInclude Include="12-b2-linear_list_DL.h" />
+    <ClInclude Include="12-b2-student.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{9FDD248B-1007-4828-BCCE-6F2D268989F0}</ProjectGuid>
